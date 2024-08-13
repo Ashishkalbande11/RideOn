@@ -12,7 +12,6 @@ RideOn is a dynamic taxi booking application developed using Java, Spring Boot, 
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -110,9 +109,6 @@ Contributions are welcome! Please follow these steps:
 5. Push to the branch (`git push origin feature/your-feature-name`).
 6. Create a Pull Request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
@@ -120,7 +116,7 @@ For any inquiries or feedback, feel free to contact me:
 
 - **Name**: Ashish Kalbande
 - **Email**: ashishkalbande60@gmail.com
-- **LinkedIn**: [Ashish Kalbande](https://www.linkedin.com/in/ashish-kalbande)
+- **LinkedIn**: [Ashish Kalbande](https://www.linkedin.com/in/ashish-kalbande-0b4786200/)
 
 ---
 
