@@ -75,16 +75,17 @@ Once the application is up and running, you can access the API via `http://local
 - **Book a Taxi:**
 
     ```http
-    POST /api/bookings
+    POST /my-taxi/book-cab
     ```
 
     **Payload:**
     ```json
     {
-        "userId": "12345",
-        "pickupLocation": "Location A",
-        "dropLocation": "Location B",
-        "time": "2024-08-13T10:00:00"
+        "source": "string",
+        "destination": "string",
+        "distanceInKm": 0,
+        "customerEmailId": "string",
+        "bookingDate": "2024-08-13T03:25:19.990Z"
     }
     ```
 
@@ -92,9 +93,10 @@ Once the application is up and running, you can access the API via `http://local
 
 Here are some of the key API endpoints:
 
-- **/api/bookings** - Create a new taxi booking.
-- **/api/bookings/{id}** - Retrieve a specific booking by ID.
-- **/api/users** - Manage user profiles.
+- **/my-taxi/add-customer** - New customer registration.
+- **/my-taxi/customer/{email}/trip-bookings** - Get all bookings of customers.
+- **/my-taxi/add-driver** - New registration of driver with cab.
+- **/my-taxi/driver/{driverId}/trip-booking** - Get all booking of driver.
 
 Refer to the [API documentation](#) for a full list of endpoints and their usage.
 
