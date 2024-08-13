@@ -12,7 +12,7 @@ public class EmailService {
     @Autowired
     JavaMailSender javaMailSender;
 
-    public void sendMail(TripBooking tripBooking){
+    public void sendMailToCustomer(TripBooking tripBooking){
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         String subject = "Cab Booking Confirmation";
         String body = "Dear "+tripBooking.getCustomer().getFirstName()+" "+
@@ -29,6 +29,28 @@ public class EmailService {
 
         simpleMailMessage.setFrom("ashishkalbande027@gmail.com");
         simpleMailMessage.setTo(tripBooking.getCustomer().getEmail(),tripBooking.getDriver().getEmail());
+        simpleMailMessage.setSubject(subject);
+        simpleMailMessage.setText(body);
+
+        javaMailSender.send(simpleMailMessage);
+    }
+    public void sendMailToDriver(TripBooking tripBooking){
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        String subject = "Cab Booking Confirmation";
+        String body = "Dear "+tripBooking.getDriver().getFirstName()+" "+
+                tripBooking.getDriver().getLastName()+",\n\n "+
+                "Rating: "+tripBooking.getDriver().getRating()+"\n\n"+
+                "Your cab booking is confirmed at "+ tripBooking.getJourneyDate()+"\n"+
+                "Booking ID: "+tripBooking.getBookingId()+"\n"+"Source: "+
+                tripBooking.getSource()+"\n"+"Destination: "+ tripBooking.getDestination()+"\n"+
+                "Fare: "+tripBooking.getTotalFare()+"\n\n"+
+                "Customer Details: \n"+
+                "Name: "+tripBooking.getCustomer().getFirstName()+" "+tripBooking.getCustomer().getLastName()+"\n"+
+                "Contact no.: "+tripBooking.getCustomer().getNumber()+
+                "Thank you for choosing our service !";
+
+        simpleMailMessage.setFrom("ashishkalbande027@gmail.com");
+        simpleMailMessage.setTo(tripBooking.getDriver().getEmail());
         simpleMailMessage.setSubject(subject);
         simpleMailMessage.setText(body);
 

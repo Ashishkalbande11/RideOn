@@ -72,7 +72,8 @@ public class CustomerService {
         driverRepo.save(cab.getDriver());
 
         //email sending
-        emailService.sendMail(savedTrip);
+        emailService.sendMailToCustomer(savedTrip);
+        emailService.sendMailToDriver(savedTrip);
 
         return TripBookingTransformer.tripBookingToTripBookingResponse(savedTrip);
     }
